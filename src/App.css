@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Roboto regular";
+  src: url(robotos/Roboto-Regular.ttf);
+}
+body {
+  font-family: "Roboto regular" !important;
+}
 .margin-left {
   margin-left: 10px;
 }
@@ -13,4 +20,35 @@
 }
 .text-deco-none {
   text-decoration: none;
+}
+
+.img-banner {
+  background-image: url(img-banner.png);
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  position: relative;
+}
+
+.text-banner {
+  font-size: 55px;
+  width: 80%;
+  text-align: center;
+
+  z-index: 3 !important;
+  margin: 8% auto auto auto !important;
+}
+
+.radius-none {
+  border-radius: 0 !important;
+}
+
+.dark-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5, 5, 5, 0.7);
+  z-index: 2 !important;
 }

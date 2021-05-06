@@ -29,7 +29,7 @@ export const Header = (props) => {
                 activeClassName="active"
                 className="text-deco-none"
               >
-                <li className="nav-item   p-2 btn-lg outline-btn">FILM</li>
+                <li className="nav-item   p-2 btn-lg outline-btn">FILMS</li>
               </NavLink>
               <NavLink to="/Movies/serie.html" className="text-deco-none">
                 <li className="nav-item  p-2 btn-lg margin-left outline-btn">
