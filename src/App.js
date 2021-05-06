@@ -5,19 +5,20 @@ import { Header } from "./components/Header";
 import { Home } from "./components/Accueil";
 import { Film } from "./components/Film";
 import { Serie } from "./components/Series";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  NavLink,
-} from "react-router-dom";
+import { Error404 } from "./components/Error404";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
     <>
-      <Header />
-      <Home />
-      <Film />
-      <Serie />
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Movies/film.html" component={Film} />
+          <Route exact path="/Movies/serie.html" component={Serie} />
+          <Route component={Error404} />
+        </Switch>
+      </Router>
     </>
   );
 }

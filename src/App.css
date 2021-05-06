@@ -4,7 +4,13 @@
 .navbar-brand {
   height: auto;
 }
+.active {
+  color: black !important;
+}
 .outline-btn {
   border: 2px solid white;
   color: white;
+}
+.text-deco-none {
+  text-decoration: none;
 }

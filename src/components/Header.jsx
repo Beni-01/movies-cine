@@ -1,11 +1,14 @@
 import React from "react";
 import logo from "../Logo.png";
+import { NavLink, Link } from "react-router-dom";
 export const Header = (props) => {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-danger p-2">
         <div className="container">
-          <img className="navbar-brand img-fluid" src={logo} />
+          <Link to="/">
+            <img className="navbar-brand img-fluid" src={logo} />
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -21,10 +24,18 @@ export const Header = (props) => {
 
           <div className="navbar-collapse collapse" id="collapseButton">
             <ul className="nav navbar-nav ms-auto">
-              <li className="nav-item   p-2 btn-lg outline-btn">FILM</li>
-              <li className="nav-item  p-2 btn-lg margin-left outline-btn">
-                SERIES
-              </li>
+              <NavLink
+                to="/Movies/film.html"
+                activeClassName="active"
+                className="text-deco-none"
+              >
+                <li className="nav-item   p-2 btn-lg outline-btn">FILM</li>
+              </NavLink>
+              <NavLink to="/Movies/serie.html" className="text-deco-none">
+                <li className="nav-item  p-2 btn-lg margin-left outline-btn">
+                  SERIES
+                </li>
+              </NavLink>
             </ul>
           </div>
         </div>
