@@ -25,13 +25,13 @@ body {
 .img-banner {
   background-image: url(img-banner.png);
   width: 100vw;
-  height: 80vh;
+  height: 75vh;
   background-size: cover;
   position: relative;
+  box-sizing: border-box;
 }
 
 .text-banner {
-  font-size: 55px;
   width: 80%;
   text-align: center;
 
@@ -43,6 +43,10 @@ body {
   border-radius: 0 !important;
 }
 
+.bg-color-category {
+  background-color: rgba(22, 21, 21);
+}
+
 .dark-background {
   position: absolute;
   top: 0;
@@ -51,4 +55,14 @@ body {
   bottom: 0;
   background-color: rgba(5, 5, 5, 0.7);
   z-index: 2 !important;
+}
+.outline-btn-danger {
+  border: 2px solid #de4c46;
+  color: #de4c46;
+  font-size: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+.padding-3 {
+  padding: 1%;
 }

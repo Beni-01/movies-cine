@@ -1,21 +1,34 @@
 import React from "react";
-import { InputConponent } from "./InputConponent";
+import { Banner } from "./Banner";
 
 export const Home = (props) => {
   return (
     <>
-      <div className="img-banner">
-        <div className="dark-background">
-          <h1 className="text-white text-banner">
-            Welcome to <span className="text-danger">MoviesCine</span> <br /> A
-            plateform of free streaming whitout inscription
-          </h1>
-          <InputConponent
-            placeholder="Search the movies up here"
-            icon="fa fa-search fa-2x"
-          >
-            Search Bar
-          </InputConponent>
+      <Banner />
+
+      <div className="container-fluid bg-color-category py-2">
+        <div className="row justify-content-center ">
+          <div className="col-12">
+            <div className="container mt-2">
+              <div className="row  text-center justify-content-center">
+                <div className="col-3 col-sm-2 outline-btn-danger p-2">
+                  Action
+                </div>
+                <div className="col-3 col-sm-2 outline-btn-danger p-2">
+                  Fiction
+                </div>
+                <div className="col-3 col-sm-2 outline-btn-danger p-2">
+                  Romance
+                </div>
+                <div className="col-3 col-sm-2 outline-btn-danger p-2">
+                  Worship
+                </div>
+                <div className="col-3 col-sm-2 outline-btn-danger p-2">
+                  Commedy
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
