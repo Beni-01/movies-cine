@@ -7,7 +7,11 @@ export const Header = (props) => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-danger p-2">
         <div className="container">
           <Link to="/">
-            <img className="navbar-brand img-fluid" src={logo} />
+            <img
+              className="navbar-brand img-fluid"
+              src={logo}
+              alt="MoviesCine platform of free streaming"
+            />
           </Link>
 
           <button
@@ -19,7 +23,7 @@ export const Header = (props) => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="navbar-collapse collapse" id="collapseButton">
