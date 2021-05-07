@@ -60,10 +60,10 @@ body {
 }
 
 .bg-color-category {
-  background-color: rgba(20, 20, 20);
+  background-color: rgba(19, 20, 19);
 }
 .bg-color-footer {
-  background-color: rgba(20, 20, 20);
+  background-color: rgba(19, 20, 19);
   color: white;
 }
 
@@ -79,7 +79,8 @@ body {
   text-align: justify;
 }
 
-.bg-color-cardList {
+.bg-color-cardList,
+.bg-requirement {
   background-color: rgba(25, 25, 25);
 }
 .dark-background {

@@ -51,10 +51,10 @@ export const Footer = () => {
         </div>
       </div>
 
-      <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-color-cardList">
         <div className="container px-4">
           <p className="navbar-brand img-fluid mt-3 ">
-            this product uses the TMDb API is not approved or certified by TMDb
+            Copyright@2021- All rights reserved
           </p>
 
           <ul className="nav navbar-nav ms-auto">
@@ -67,6 +67,10 @@ export const Footer = () => {
           </ul>
         </div>
       </nav>
+
+      <div className="text-center bg-danger text-white p-3">
+        this product uses the TMDb API is not approved or certified by TMDb
+      </div>
     </>
   );
 };

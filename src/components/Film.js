@@ -13,6 +13,12 @@ export const Film = (props) => {
       <Layout cardclassName="img-fluid p-1 img-style-film" />
       <Layout cardclassName="img-fluid p-1 img-style-film" />
 
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-6"></div>
+        </div>
+      </div>
+
       <Footer />
     </>
   );
