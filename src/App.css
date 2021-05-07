@@ -6,10 +6,6 @@
 body::-webkit-scrollbar {
   width: 0.7em;
 }
-
-body::-webkit-scrollbar-track {
-}
-
 body::-webkit-scrollbar-thumb {
   background-color: #df504b;
   border-radius: 20px;
@@ -66,6 +62,23 @@ body {
 .bg-color-category {
   background-color: rgba(20, 20, 20);
 }
+.bg-color-footer {
+  background-color: rgba(20, 20, 20);
+  color: white;
+}
+
+.bg-color-footer hr {
+  width: 35%;
+  padding: 2px;
+  opacity: 1;
+}
+
+.bg-color-footer p {
+  font-size: 20px;
+  width: 95%;
+  text-align: justify;
+}
+
 .bg-color-cardList {
   background-color: rgba(25, 25, 25);
 }
@@ -81,7 +94,7 @@ body {
 .outline-btn-danger {
   border: 2px solid #de4c46;
   color: #de4c46;
-  font-size: 20px;
+  font-size: 18px;
   margin: 10px;
   box-sizing: border-box;
 }
@@ -94,11 +107,9 @@ body {
 }
 
 .img-style-film {
-  border: 1px solid white;
   border-radius: 45px 0 45px 0;
 }
 
 .img-style-serie {
-  border: 1px solid white;
   border-radius: 45px 45px 45px 45px;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Banner } from "./Banner";
 import { Categories } from "./Categories";
 import { Layout } from "./CardList";
+import { Footer } from "./footer";
 
 export const Home = (props) => {
   return (
@@ -26,6 +27,8 @@ export const Home = (props) => {
         cardclassName="img-fluid p-1 img-style-serie"
       />
       <Layout section="" cardclassName="img-fluid p-1 img-style-serie" />
+
+      <Footer />
     </>
   );
 };
