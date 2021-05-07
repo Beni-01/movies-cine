@@ -1,12 +1,12 @@
 import React from "react";
 
-export const InputConponent = ({ children, placeholder, icon }) => {
-  return (
-    <>
+export const InputSearch = ({ children, placeholder }) => (
+  <div className="container-fluid bg-color-cardList">
+    <div className="col-12">
       <form className="container">
-        <div className="row justify-content-center mt-5">
-          <div className="col-sm-7  col-12 mt-5 ">
-            <div className="input-group input-group-addon">
+        <div className="row justify-content-center">
+          <div className="col-sm-7 col-12  mt-5 ">
+            <div className="input-group input-group-addon border">
               <label className="sr-only">{children}</label>
               <input
                 type="text"
@@ -14,12 +14,12 @@ export const InputConponent = ({ children, placeholder, icon }) => {
                 placeholder={placeholder}
               />
               <button className="btn btn-danger radius-none btn-lg p-2">
-                <i className={icon}></i>
+                <i className="fa fa-search fa-2x"></i>
               </button>
             </div>
           </div>
         </div>
       </form>
-    </>
-  );
-};
+    </div>
+  </div>
+);
