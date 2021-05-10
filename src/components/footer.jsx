@@ -51,7 +51,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <nav className="navbar navbar-expand-lg navbar-dark bg-color-cardList">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-requirement">
         <div className="container px-4">
           <p className="navbar-brand img-fluid mt-3 ">
             Copyright@2021- All rights reserved

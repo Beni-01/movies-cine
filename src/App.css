@@ -79,7 +79,11 @@ body {
   text-align: justify;
 }
 
-.bg-color-cardList,
+.bg-color-cardList {
+  background-image: url(bg-film.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
 .bg-requirement {
   background-color: rgba(25, 25, 25);
 }

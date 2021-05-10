@@ -9,8 +9,12 @@ export const Home = (props) => {
     <>
       <Banner />
       <Categories />
-      <Layout section="POPULAR FILM" />
-      <Layout section="RECENTS FILM" />
+      <div className="bg-color-cardList">
+        <Layout section="POPULAR FILM" />
+        <Layout section="UPCOMING FILM" />
+        <Layout section="POPULAR SERIALS" />
+        <Layout section="TOP RATED FILM" />
+      </div>
 
       <Footer />
     </>

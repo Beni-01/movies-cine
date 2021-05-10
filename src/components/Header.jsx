@@ -40,6 +40,11 @@ export const Header = (props) => {
                   SERIES
                 </li>
               </NavLink>
+              <NavLink to="/Auteurs/auteurs.html" className="text-deco-none">
+                <li className="nav-item  p-2 btn-lg margin-left outline-btn">
+                  AUTEURS
+                </li>
+              </NavLink>
             </ul>
           </div>
         </div>
