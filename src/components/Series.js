@@ -11,7 +11,10 @@ export const Serie = (props) => {
       <InputSearch placeholder="Search your serial here">
         Search your seial
       </InputSearch>
-      <Layout section="ALL SERIALS" />
+      <div className="bg-color-cardList">
+        <Layout section="ALL SERIALS" />
+      </div>
+
       <Footer />
     </>
   );

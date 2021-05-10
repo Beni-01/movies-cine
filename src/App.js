@@ -7,13 +7,14 @@ import { Serie } from "./components/Series";
 import { Acteurs } from "./components/Acteurs";
 import { Error404 } from "./components/Error404";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-function App() {
+function App(props) {
   return (
     <>
       <Router>
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          console.log(props);
           <Route exact path="/Movies/film.html" component={Film} />
           <Route exact path="/Movies/serie.html" component={Serie} />
           <Route exact path="/Auteurs/auteurs.html" component={Acteurs} />
