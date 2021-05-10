@@ -12,7 +12,7 @@ export const Footer = () => {
               <div className="row">
                 <div className="col-sm-6">
                   <div>
-                    <img src={logo} className="" />
+                    <img src={logo} className="" alt="logo de moviescine" />
                     <hr className="bg-danger" />
                     <p>
                       MoviesCine is a plateform of free streaming without

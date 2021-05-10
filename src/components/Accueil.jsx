@@ -9,24 +9,8 @@ export const Home = (props) => {
     <>
       <Banner />
       <Categories />
-      <Layout
-        section="POPULAR FILM"
-        cardclassName="img-fluid p-1 img-style-film"
-      />
-      <Layout
-        section="RECENTS FILM"
-        cardclassName="img-fluid p-1 img-style-film"
-      />
-
-      <Layout
-        section="POPULAR SERIES"
-        cardclassName="img-fluid p-1 img-style-serie"
-      />
-      <Layout
-        section="RECENTS SERIES"
-        cardclassName="img-fluid p-1 img-style-serie"
-      />
-      <Layout section="" cardclassName="img-fluid p-1 img-style-serie" />
+      <Layout section="POPULAR FILM" />
+      <Layout section="RECENTS FILM" />
 
       <Footer />
     </>
