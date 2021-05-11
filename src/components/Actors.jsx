@@ -3,7 +3,7 @@ import { Footer } from "./footer";
 import { Categories } from "./Categories";
 import { InputSearch } from "./InputSearch";
 
-export const Acteurs = (props) => {
+export const Actors = (props) => {
   return (
     <>
       <Categories />
