@@ -3,6 +3,7 @@ import { Banner } from "./Banner";
 import { Categories } from "./Categories";
 import { Layout } from "./CardList";
 import { Footer } from "./footer";
+import { Actors } from "./Actors";
 
 export const Home = (props) => {
   return (
@@ -14,6 +15,7 @@ export const Home = (props) => {
         <Layout section="UPCOMING FILM" />
         <Layout section="POPULAR SERIALS" />
         <Layout section="TOP RATED FILM" />
+        <Actors section="Home" page={2} />
       </div>
 
       <Footer />

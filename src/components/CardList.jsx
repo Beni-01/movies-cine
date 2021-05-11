@@ -1,23 +1,6 @@
-import React, { useState, useEffect } from "react";
-//import Film1 from "../imagesFilmsEtSeries/21.jpg";
+import React from "react";
+import { useMovies } from "./useMovies";
 import { CardFilm } from "./cardFilm";
-
-const useMovies = (url) => {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    (async function () {
-      const response = await fetch(url);
-      const data = await response.json();
-
-      if (response.ok) {
-        setMovies(data.results);
-      }
-    })();
-  }, []);
-
-  return [movies];
-};
 
 export const Layout = ({ section, cardclassName }) => {
   const [listsPopularFilm] = useMovies(
@@ -41,7 +24,7 @@ export const Layout = ({ section, cardclassName }) => {
   const [allSerials] = useMovies(
     "https://api.themoviedb.org/3/discover/tv?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate"
   );
-  //console.log(listTopRated);
+
   let filteredList = null;
 
   switch (section) {

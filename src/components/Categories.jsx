@@ -13,25 +13,16 @@ export const Categories = (props) => {
       setCategory(data.genres);
     })();
   }, []);
-  console.log(category);
+
   return (
     <>
       <div className="container-fluid bg-color-category py-2">
-        <div className="row justify-content-center ">
-          <div className="col-12">
-            <div className="container mt-2">
-              <div className="row  text-center justify-content-center">
-                {category.map(({ name, id }) => (
-                  <div
-                    className="col-3 col-sm-2 outline-btn-danger p-2"
-                    key={id}
-                  >
-                    {name}
-                  </div>
-                ))}
-              </div>
+        <div className="row  text-center justify-content-center">
+          {category.map(({ name, id }) => (
+            <div className="col-3 col-md-2 outline-btn-danger p-2" key={id}>
+              {name}
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </>

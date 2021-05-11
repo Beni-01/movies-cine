@@ -5,7 +5,7 @@ export const InputConponent = ({ children, placeholder, icon }) => {
     <>
       <form className="container">
         <div className="row justify-content-center mt-5">
-          <div className="col-sm-7  col-12 mt-5 ">
+          <div className="col-md-7  col-12 mt-5 ">
             <div className="input-group input-group-addon">
               <label className="sr-only">{children}</label>
               <input

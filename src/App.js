@@ -4,7 +4,7 @@ import { Header } from "./components/Header";
 import { Home } from "./components/Accueil";
 import { Film } from "./components/Film";
 import { Serie } from "./components/Series";
-import { Actors } from "./components/Actors";
+import { ActorPage } from "./components/actorpage";
 import { Error404 } from "./components/Error404";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App(props) {
@@ -16,7 +16,7 @@ function App(props) {
           <Route exact path="/" component={Home} />
           <Route exact path="/Movies/film.html" component={Film} />
           <Route exact path="/Movies/serie.html" component={Serie} />
-          <Route exact path="/Actors/actors.html" component={Actors} />
+          <Route exact path="/Actors/actors.html" component={ActorPage} />
           <Route component={Error404} />
         </Switch>
       </Router>

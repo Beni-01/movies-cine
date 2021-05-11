@@ -10,7 +10,7 @@ export const Footer = () => {
           <div className="col-12 my-4 p-3">
             <div className="container">
               <div className="row">
-                <div className="col-sm-6">
+                <div className="col-md-6">
                   <div>
                     <img src={logo} className="" alt="logo de moviescine" />
                     <hr className="bg-danger" />
@@ -25,13 +25,13 @@ export const Footer = () => {
                     </p>
                   </div>
                 </div>
-                <div className="col-sm-6 mt-sm-5">
+                <div className="col-md-6 mt-md-5">
                   <p className="mt-sm-5">
                     Subscribe to the newsletter for being infomed about upcoming
                     movies and series
                   </p>
 
-                  <div className="col-12 mt-5">
+                  <div className="col-12 mt-md-5">
                     <div className="input-group input-group-addon mt-5 border">
                       <label className="sr-only">Newsletter</label>
                       <input

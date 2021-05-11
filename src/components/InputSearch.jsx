@@ -5,7 +5,7 @@ export const InputSearch = ({ children, placeholder }) => (
     <div className="col-12">
       <form className="container">
         <div className="row justify-content-center">
-          <div className="col-sm-7 col-12  mt-5 ">
+          <div className="col-md-7 col-12  my-5 ">
             <div className="input-group input-group-addon border">
               <label className="sr-only">{children}</label>
               <input

@@ -42,7 +42,7 @@ export const Header = (props) => {
               </NavLink>
               <NavLink to="/Actors/actors.html" className="text-deco-none">
                 <li className="nav-item  p-2 btn-lg margin-left outline-btn">
-                  AUTORS
+                  ACTORS
                 </li>
               </NavLink>
             </ul>
