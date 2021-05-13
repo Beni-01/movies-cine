@@ -15,7 +15,7 @@ export const Home = (props) => {
         <Layout section="UPCOMING FILM" />
         <Layout section="POPULAR SERIALS" />
         <Layout section="TOP RATED FILM" />
-        <Actors section="Home" page={2} />
+        <Actors section="Home" page={1} />
       </div>
 
       <Footer />

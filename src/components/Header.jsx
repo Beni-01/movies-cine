@@ -28,20 +28,27 @@ export const Header = (props) => {
 
           <div className="navbar-collapse collapse" id="collapseButton">
             <ul className="nav navbar-nav ms-auto">
+              <NavLink to="/" className="text-deco-none">
+                <li className="nav-item mt-3 mt-md-0  p-2 btn-lg  margin-left outline-btn">
+                  HOME
+                </li>
+              </NavLink>
               <NavLink
                 to="/Movies/film.html"
                 activeClassName="active"
                 className="text-deco-none"
               >
-                <li className="nav-item   p-2 btn-lg outline-btn">FILMS</li>
+                <li className="nav-item mt-2 mt-md-0 p-2 btn-lg margin-left outline-btn">
+                  FILMS
+                </li>
               </NavLink>
               <NavLink to="/Movies/serie.html" className="text-deco-none">
-                <li className="nav-item  p-2 btn-lg margin-left outline-btn">
+                <li className="nav-item  mt-2 mt-md-0 p-2 btn-lg margin-left outline-btn">
                   SERIALS
                 </li>
               </NavLink>
               <NavLink to="/Actors/actors.html" className="text-deco-none">
-                <li className="nav-item  p-2 btn-lg margin-left outline-btn">
+                <li className="nav-item  mt-2 mt-md-0 p-2 btn-lg margin-left outline-btn">
                   ACTORS
                 </li>
               </NavLink>

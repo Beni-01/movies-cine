@@ -9,7 +9,7 @@ export const ActorPage = (props) => {
       <InputSearch placeholder="Search the acteur here">
         Search the acteur here
       </InputSearch>
-      <Actors page={1} />
+      <Actors page={2} />
       <Footer />
     </>
   );
