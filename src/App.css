@@ -121,3 +121,9 @@ body {
 .img-style-serie {
   border-radius: 45px 45px 45px 45px;
 }
+.bg-style-details {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  opacity: 1 !important;
+  padding: 5%;
+  border-radius: 46px;
+}

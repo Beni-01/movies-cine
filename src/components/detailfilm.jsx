@@ -8,43 +8,68 @@ export function DetailMovie(props) {
     `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US`
   );
 
-  console.log(movieDetails);
+  const {
+    title,
+    gender,
+    id,
+    homepage,
+    overview,
+    budget,
+    vote_average,
+    vote_count,
+    revenue,
+    runtime,
+    release_date,
+    poster_path,
+    backdrop_path,
+  } = movieDetails;
   return (
     <>
       <section
         className="container-fluid "
-        style={{ backgroundColor: `${dark}`, backgroundAttachment: "fixed" }}
+        style={{
+          backgroundImage: `url(https://image.tmdb.org/t/p/original${backdrop_path})`,
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          position: "relative",
+        }}
       >
+        <div
+          style={{
+            backgroundColor: "rgba(0,0,0,0.1)",
+            position: "absolute",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
+          }}
+        ></div>
         <div className="row">
           <div className="col-12 mt-5">
-            <div className="container mt-4">
+            <div className="container my-4">
               <div className="row justify-content-center">
-                <div className="col-md-10 ">
-                  <h2 className="text-white ">Movie Description</h2>
+                <div className="col-md-10 bg-style-details">
+                  <h1 className="text-white ">Movie Description</h1>
                   <hr className="bg-danger" style={{ opacity: 1 }} />
-                  <div className="row">
-                    <div className="col-md-5 ">
-                      <img src="" alt="" />
+                  <div className="row justify-content-center mt-5">
+                    <div className="col-md-3">
+                      <img
+                        src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+                        alt={title}
+                        className="img-fluid img-style-film"
+                      />
                     </div>
-                    <div className="col-md-7 text-white">
-                      <h2>Movie Title {props.match.params.id}</h2>
-                      <h3>release date: </h3>
-                      <h4>lien </h4>
+                    <div className="col-md-8 text-white">
+                      <h2>{title}</h2>
+                      <h6>release date: {release_date}</h6>
+                      <h6>
+                        <a href={homepage}> {homepage}</a>
+                      </h6>
                       <span>categorie1</span>
                       <span>categorie2</span>
                       <span>categorie3</span>
                       <div className="mt-3">
-                        <p style={{ fontSize: "18px" }}>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua. Ut enim ad minim veniam, quis
-                          nostrud exercitation ullamco laboris nisi ut aliquip
-                          ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu
-                          fugiat nulla pariatur. Excepteur sint occaecat
-                          cupidatat non proident, sunt in culpa qui officia
-                          deserunt mollit anim id est laborum.
-                        </p>
+                        <p style={{ fontSize: "18px" }}>{overview}</p>
                       </div>
                     </div>
                   </div>
