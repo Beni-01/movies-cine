@@ -2,7 +2,7 @@ import React from "react";
 import { useMovies } from "./useMovies";
 import { CardFilm } from "./cardMovies";
 
-export const Layout = ({ section, type }) => {
+export const Layout = ({ section, type, link = "default", id }) => {
   const [listsPopularFilm] = useMovies(
     "https://api.themoviedb.org/3/movie/popular?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=1",
     true
@@ -31,11 +31,23 @@ export const Layout = ({ section, type }) => {
     true
   );
 
-  const [similarMovies] = useMovies();
+  const [similarMovies] = useMovies(
+    `https://api.themoviedb.org/3/movie/${id}/similar?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=1`,
+    true,
+    `${id}`
+  );
+  const [similarSeries] = useMovies(
+    `https://api.themoviedb.org/3/tv/${id}/similar?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=1`,
+    true,
+    `${id}`
+  );
 
   let filteredList = null;
 
   switch (section) {
+    case "SIMILAR MOVIES":
+      filteredList = similarMovies.filter((value, index) => index <= 7);
+      break;
     case "POPULAR MOVIES":
       filteredList = listsPopularFilm.filter((value, index) => index <= 7);
       break;
@@ -60,14 +72,19 @@ export const Layout = ({ section, type }) => {
     case "ALL SERIALS":
       filteredList = allSerials.filter((value, index) => index <= 19);
       break;
+    case "SIMILAR SERIES":
+      filteredList = similarSeries.filter((value, index) => index <= 7);
+      break;
     case "SIMILAR MOVIES":
       filteredList = similarMovies.filter(
         (value, index) => index <= 0 && index < 8
       );
       break;
   }
-  let style =
-    section != "TOP RATED FILM" ? "text-danger b-left" : "text-white b-left";
+  let style = section.includes("SIMILAR")
+    ? "text-white b-left"
+    : "text-danger b-left";
+
   return (
     <>
       <section className="container-fluid ">
@@ -89,6 +106,7 @@ export const Layout = ({ section, type }) => {
                       cardClass="img-fluid img-style-film"
                       idMovie={id}
                       type={type}
+                      link={link}
                     />
                   )
                 )}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-export const useMovies = (url, asResults) => {
+
+export const useMovies = (url, asResults, dependance = null) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -8,12 +9,12 @@ export const useMovies = (url, asResults) => {
       const data = await response.json();
 
       if (asResults) {
-        await setMovies(data.results);
+        setMovies(data.results);
       } else {
-        await setMovies(data);
+        setMovies(data);
       }
     })();
-  }, []);
+  }, [dependance]);
 
   return [movies];
 };

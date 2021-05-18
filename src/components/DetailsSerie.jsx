@@ -1,5 +1,6 @@
 import React from "react";
 import { MovieActors } from "./MovieActors";
+import { Layout } from "./CardList";
 import { useMovies } from "./useMovies";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -7,7 +8,8 @@ import { Link } from "react-router-dom";
 export function DetailsSerie(props) {
   const [serieDetails] = useMovies(
     `https://api.themoviedb.org/3/tv/${props.match.params.id}?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US`,
-    false
+    false,
+    props.match.params.id
   );
 
   const {
@@ -67,16 +69,6 @@ export function DetailsSerie(props) {
           position: "relative",
         }}
       >
-        <div
-          style={{
-            backgroundColor: "rgba(0,0,0,0.1)",
-            position: "absolute",
-            top: "0",
-            left: "0",
-            right: "0",
-            bottom: "0",
-          }}
-        ></div>
         <div className="row">
           <div className="col-12 mt-5">
             <div className="container my-4">
@@ -127,6 +119,12 @@ export function DetailsSerie(props) {
                     </div>
                   </div>
                   <MovieActors cast={cast} />
+                  <Layout
+                    section="SIMILAR SERIES"
+                    type="movie"
+                    link="details"
+                    id={props.match.params.id}
+                  />
                 </div>
               </div>
             </div>
