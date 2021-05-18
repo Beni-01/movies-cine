@@ -121,7 +121,7 @@ export function DetailsSerie(props) {
                   <MovieActors cast={cast} />
                   <Layout
                     section="SIMILAR SERIES"
-                    type="movie"
+                    type="tv"
                     link="details"
                     id={props.match.params.id}
                   />
