@@ -11,10 +11,10 @@ export const Home = (props) => {
       <Banner />
       <Categories />
       <div className="bg-color-cardList">
-        <Layout section="POPULAR FILM" />
-        <Layout section="UPCOMING FILM" />
-        <Layout section="POPULAR SERIALS" />
-        <Layout section="TOP RATED FILM" />
+        <Layout section="POPULAR MOVIES" type="movie" />
+        <Layout section="UPCOMING MOVIES" type="movie" />
+        <Layout section="POPULAR SERIALS" type="tv" />
+        <Layout section="TOP RATED MOVIES" type="movie" />
         <Actors section="Home" page={1} />
       </div>
 

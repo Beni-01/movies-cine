@@ -12,7 +12,7 @@ export const Serie = (props) => {
         Search your seial
       </InputSearch>
       <div className="bg-color-cardList">
-        <Layout section="ALL SERIALS" />
+        <Layout section="ALL SERIALS" type="tv" />
       </div>
 
       <Footer />

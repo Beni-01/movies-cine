@@ -1,16 +1,19 @@
 import React from "react";
-import { Layout } from "./CardList";
+
 import { MovieActors } from "./MovieActors";
 import { useMovies } from "./useMovies";
-const dark = "black";
-export function DetailMovie(props) {
-  const [movieDetails] = useMovies(
-    `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US`
-  );
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
+export function DetailsMovie(props) {
+  console.log(props.match.params);
+  const [movieDetails] = useMovies(
+    `https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US`,
+    false
+  );
   const {
     title,
-    gender,
+    genres,
     id,
     homepage,
     overview,
@@ -23,6 +26,37 @@ export function DetailMovie(props) {
     poster_path,
     backdrop_path,
   } = movieDetails;
+
+  const [cast, setCast] = useState([]);
+
+  useEffect(() => {
+    (async function () {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/${props.match.params.id}/credits?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US`
+      );
+      const data = await response.json();
+
+      setCast(data.cast);
+    })();
+  }, []);
+
+  const categories = () => {
+    if (!genres) {
+      return false;
+    } else {
+      return genres.map(({ id, name }) => (
+        <span className="text-danger btn-outline-danger ml-2 btn " key={id}>
+          {name}
+        </span>
+      ));
+    }
+  };
+
+  const min = runtime % 60;
+  const hour = Math.floor(runtime / 60);
+
+  const duration = `${hour}h ${min} min`;
+
   return (
     <>
       <section
@@ -49,10 +83,10 @@ export function DetailMovie(props) {
             <div className="container my-4">
               <div className="row justify-content-center">
                 <div className="col-md-10 bg-style-details">
-                  <h1 className="text-white ">Movie Description</h1>
+                  <h1 className="text-white ">Movie Description </h1>
                   <hr className="bg-danger" style={{ opacity: 1 }} />
                   <div className="row justify-content-center mt-5">
-                    <div className="col-md-3">
+                    <div className="col-md-4">
                       <img
                         src={`https://image.tmdb.org/t/p/w300${poster_path}`}
                         alt={title}
@@ -60,21 +94,27 @@ export function DetailMovie(props) {
                       />
                     </div>
                     <div className="col-md-8 text-white">
-                      <h2>{title}</h2>
+                      <h2 className="text-danger">{title}</h2>
+                      <h4>duration: {duration}</h4>
                       <h6>release date: {release_date}</h6>
-                      <h6>
+                      <h6 className="mb-3">
                         <a href={homepage}> {homepage}</a>
                       </h6>
-                      <span>categorie1</span>
-                      <span>categorie2</span>
-                      <span>categorie3</span>
+                      {categories()}
                       <div className="mt-3">
                         <p style={{ fontSize: "18px" }}>{overview}</p>
                       </div>
+                      <span className="text-info">budget: {budget}</span>
+                      &nbsp;&nbsp;&nbsp;
+                      <span className="text-info">Revenue : {revenue}</span>
+                      &nbsp;&nbsp;&nbsp;
+                      <span className="text-info">
+                        vote_count: {vote_count}
+                      </span>
+                      &nbsp;&nbsp;&nbsp;
                     </div>
                   </div>
-                  <MovieActors />
-                  <Layout section="TOP RATED FILM" />
+                  <MovieActors cast={cast} />
                 </div>
               </div>
             </div>

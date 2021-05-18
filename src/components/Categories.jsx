@@ -19,7 +19,11 @@ export const Categories = (props) => {
       <div className="container-fluid bg-color-category py-2">
         <div className="row  text-center justify-content-center">
           {category.map(({ name, id }) => (
-            <div className="col-3 col-md-2 outline-btn-danger p-2" key={id}>
+            <div
+              className="col-3 col-md-2 outline-btn-danger p-2"
+              key={id}
+              id={id}
+            >
               {name}
             </div>
           ))}

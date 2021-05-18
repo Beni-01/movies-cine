@@ -39,12 +39,12 @@ export const Header = (props) => {
                 className="text-deco-none"
               >
                 <li className="nav-item mt-2 mt-md-0 p-2 btn-lg margin-left outline-btn">
-                  FILMS
+                  MOVIES
                 </li>
               </NavLink>
-              <NavLink to="/Movies/serie.html" className="text-deco-none">
+              <NavLink to="/Series/serie.html" className="text-deco-none">
                 <li className="nav-item  mt-2 mt-md-0 p-2 btn-lg margin-left outline-btn">
-                  SERIALS
+                  SERIES
                 </li>
               </NavLink>
               <NavLink to="/Actors/actors.html" className="text-deco-none">

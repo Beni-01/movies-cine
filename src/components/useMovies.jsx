@@ -8,9 +8,9 @@ export const useMovies = (url, asResults) => {
       const data = await response.json();
 
       if (asResults) {
-        setMovies(data.results);
+        await setMovies(data.results);
       } else {
-        setMovies(data);
+        await setMovies(data);
       }
     })();
   }, []);

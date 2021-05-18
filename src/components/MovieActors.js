@@ -1,22 +1,17 @@
 import React from "react";
-import { useMovies } from "./useMovies";
 
-export const MovieActors = ({ page = 1 }) => {
-  const [actorsPopular] = useMovies(
-    `https://api.themoviedb.org/3/person/popular?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=${page}`,
-    true
-  );
-
+export const MovieActors = ({ cast }) => {
+  let filteredList = cast.filter((value, index) => index <= 11);
   return (
     <>
       <div className="container-fluid ">
         <div className="row">
           <div className="col-12">
             <div className="container mt-5">
-              <h2 className="text-white b-left">ACTORS</h2>
+              <h2 className="text-white b-left">PRINCIPAL ACTORS</h2>
               <div className="row text-center ">
-                {actorsPopular.map(
-                  ({ name, profile_path, id, popularity, known_for }) => (
+                {filteredList.map(
+                  ({ name, profile_path, id, popularity, character }) => (
                     <div
                       className="col-lg-3 col-6 mt-5 mb-3 p-2 text-center"
                       key={id}
@@ -29,7 +24,8 @@ export const MovieActors = ({ page = 1 }) => {
                         />
                       </figure>
                       <h5 className="text-white">
-                        <span className="text-info">Character</span> : {name}
+                        <span className="text-info">Character</span> :{" "}
+                        {character}
                       </h5>
                       <h5 className="text-white">
                         <span className="text-info">Real Name</span> : {name}

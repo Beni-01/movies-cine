@@ -1,8 +1,8 @@
 import React from "react";
 import { useMovies } from "./useMovies";
-import { CardFilm } from "./cardFilm";
+import { CardFilm } from "./cardMovies";
 
-export const Layout = ({ section, id }) => {
+export const Layout = ({ section, type }) => {
   const [listsPopularFilm] = useMovies(
     "https://api.themoviedb.org/3/movie/popular?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=1",
     true
@@ -36,15 +36,15 @@ export const Layout = ({ section, id }) => {
   let filteredList = null;
 
   switch (section) {
-    case "POPULAR FILM":
+    case "POPULAR MOVIES":
       filteredList = listsPopularFilm.filter((value, index) => index <= 7);
       break;
-    case "TOP RATED FILM":
+    case "TOP RATED MOVIES":
       filteredList = listTopRated.filter(
         (value, index) => index >= 11 && index < 15
       );
       break;
-    case "UPCOMING FILM":
+    case "UPCOMING MOVIES":
       filteredList = listUpcomingMovies.filter(
         (value, index) => index >= 8 && index <= 15
       );
@@ -88,6 +88,7 @@ export const Layout = ({ section, id }) => {
                       image={`https://image.tmdb.org/t/p/w300${poster_path}`}
                       cardClass="img-fluid img-style-film"
                       idMovie={id}
+                      type={type}
                     />
                   )
                 )}
