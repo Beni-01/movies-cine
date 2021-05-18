@@ -2,7 +2,7 @@ import React from "react";
 import { useMovies } from "./useMovies";
 import { CardFilm } from "./cardMovies";
 
-export const Layout = ({ section, type, link = "default", id }) => {
+export const Layout = ({ section, type, link = "default", id, page }) => {
   const [listsPopularFilm] = useMovies(
     "https://api.themoviedb.org/3/movie/popular?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=1",
     true
@@ -22,8 +22,9 @@ export const Layout = ({ section, type, link = "default", id }) => {
   );
 
   const [allMovies] = useMovies(
-    "https://api.themoviedb.org/3/discover/movie?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate",
-    true
+    `https://api.themoviedb.org/3/discover/movie?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`,
+    true,
+    page
   );
 
   const [allSerials] = useMovies(
