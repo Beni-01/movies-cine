@@ -60,6 +60,7 @@ export function DetailsSerie(props) {
 
   return (
     <>
+      {window.scrollTo(0, 0)}
       <section
         className="container-fluid "
         style={{
@@ -69,7 +70,7 @@ export function DetailsSerie(props) {
           position: "relative",
         }}
       >
-        <div className="row" id="top">
+        <div className="row">
           <div className="col-12 mt-5">
             <div className="container my-4">
               <div className="row justify-content-center">

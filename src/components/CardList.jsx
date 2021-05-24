@@ -2,7 +2,14 @@ import React from "react";
 import { useMovies } from "./useMovies";
 import { CardFilm } from "./cardMovies";
 
-export const Layout = ({ section, type, link = "default", id, page }) => {
+export const Layout = ({
+  section,
+  type,
+  link = "default",
+  id,
+  pageMovie,
+  pageSerie,
+}) => {
   const [listsPopularFilm] = useMovies(
     "https://api.themoviedb.org/3/movie/popular?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=1",
     true
@@ -22,14 +29,15 @@ export const Layout = ({ section, type, link = "default", id, page }) => {
   );
 
   const [allMovies] = useMovies(
-    `https://api.themoviedb.org/3/discover/movie?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`,
+    `https://api.themoviedb.org/3/discover/movie?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageMovie}&with_watch_monetization_types=flatrate`,
     true,
-    page
+    pageMovie
   );
 
   const [allSerials] = useMovies(
-    "https://api.themoviedb.org/3/discover/tv?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate",
-    true
+    `https://api.themoviedb.org/3/discover/tv?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&page=${pageSerie}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate`,
+    true,
+    pageSerie
   );
 
   const [similarMovies] = useMovies(
@@ -45,6 +53,7 @@ export const Layout = ({ section, type, link = "default", id, page }) => {
 
   let filteredList = null;
 
+  // eslint-disable-next-line default-case
   switch (section) {
     case "SIMILAR MOVIES":
       filteredList = similarMovies.filter((value, index) => index <= 7);
@@ -76,6 +85,7 @@ export const Layout = ({ section, type, link = "default", id, page }) => {
     case "SIMILAR SERIES":
       filteredList = similarSeries.filter((value, index) => index <= 7);
       break;
+    // eslint-disable-next-line no-duplicate-case
     case "SIMILAR MOVIES":
       filteredList = similarMovies.filter(
         (value, index) => index <= 0 && index < 8

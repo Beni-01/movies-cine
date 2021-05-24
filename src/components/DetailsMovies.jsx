@@ -60,6 +60,7 @@ export function DetailsMovie(props) {
 
   return (
     <>
+      {window.scrollTo(0, 0)}
       <section
         className="container-fluid "
         style={{

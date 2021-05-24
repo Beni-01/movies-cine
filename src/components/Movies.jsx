@@ -25,7 +25,7 @@ export const Movie = (props) => {
         Search your film
       </InputSearch>
       <div className="bg-color-cardList">
-        <Layout section="ALL MOVIES" type="movie" page={pageNumber} />
+        <Layout section="ALL MOVIES" type="movie" pageMovie={pageNumber} />
         <Pagination
           pageNumber={pageNumber}
           handleOnClickNext={handleClickNext}
