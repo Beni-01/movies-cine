@@ -1,6 +1,5 @@
 import React from "react";
 import { Banner } from "./Banner";
-import { Categories } from "./Categories";
 import { Layout } from "./CardList";
 import { Footer } from "./footer";
 import { Actors } from "./Actors";
@@ -9,7 +8,7 @@ export const Home = (props) => {
   return (
     <>
       <Banner />
-      <Categories />
+
       <div className="bg-color-cardList">
         <Layout section="POPULAR MOVIES" type="movie" />
         <Layout section="UPCOMING MOVIES" type="movie" />

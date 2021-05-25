@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const Categories = (props) => {
+export const Categories = ({ handleClickGenre }) => {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
@@ -14,18 +14,30 @@ export const Categories = (props) => {
     })();
   }, []);
 
+  const setGenre = (e) => {
+    handleClickGenre(e.currentTarget.id);
+    //console.log(e.currentTarget.id);
+  };
   return (
     <>
       <div className="container-fluid bg-color-category py-2">
         <div className="row  text-center justify-content-center">
+          <button
+            className="col-3 col-md-2 outline-btn-danger p-2 bg-transparent"
+            id={0}
+            onClick={setGenre}
+          >
+            ALL
+          </button>
           {category.map(({ name, id }) => (
-            <div
-              className="col-3 col-md-2 outline-btn-danger p-2"
+            <button
+              className="col-3 col-md-2 outline-btn-danger p-2 bg-transparent"
               key={id}
               id={id}
+              onClick={setGenre}
             >
               {name}
-            </div>
+            </button>
           ))}
         </div>
       </div>

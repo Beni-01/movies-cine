@@ -9,6 +9,7 @@ export const Layout = ({
   id,
   pageMovie,
   pageSerie,
+  genre = 1,
 }) => {
   const [listsPopularFilm] = useMovies(
     "https://api.themoviedb.org/3/movie/popular?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=1",
@@ -33,12 +34,23 @@ export const Layout = ({
     true,
     pageMovie
   );
+  const [allMoviesByCat] = useMovies(
+    `https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageMovie}&with_watch_monetization_types=flatrate`,
+    true,
+    pageMovie
+  );
 
   const [allSerials] = useMovies(
     `https://api.themoviedb.org/3/discover/tv?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&page=${pageSerie}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate`,
     true,
     pageSerie
   );
+
+  /*const [allSerialsByCat] = useMovies(
+    `https://api.themoviedb.org/3/discover/tv?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&page=${pageSerie}&timezone=America%2FNew_York&include_null_first_air_dates=false&with_watch_monetization_types=flatrate`,
+    true,
+    pageSerie
+  );*/
 
   const [similarMovies] = useMovies(
     `https://api.themoviedb.org/3/movie/${id}/similar?api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&page=1`,
@@ -63,7 +75,7 @@ export const Layout = ({
       break;
     case "TOP RATED MOVIES":
       filteredList = listTopRated.filter(
-        (value, index) => index >= 11 && index < 15
+        (value, index) => index >= 11 && index < 19
       );
       break;
     case "UPCOMING MOVIES":
@@ -78,6 +90,9 @@ export const Layout = ({
       break;
     case "ALL MOVIES":
       filteredList = allMovies.filter((value, index) => index <= 19);
+      break;
+    case "ALL MOVIES CATEGORY":
+      filteredList = allMoviesByCat.filter((value, index) => index <= 19);
       break;
     case "ALL SERIALS":
       filteredList = allSerials.filter((value, index) => index <= 19);
@@ -96,6 +111,11 @@ export const Layout = ({
     ? "text-white b-left"
     : "text-danger b-left";
 
+  console.log(pageMovie);
+  console.log(section);
+  console.log(genre);
+  console.log(filteredList);
+  console.log(allMoviesByCat);
   return (
     <>
       <section className="container-fluid ">
