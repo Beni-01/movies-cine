@@ -37,7 +37,7 @@ export const Layout = ({
   const [allMoviesByCat] = useMovies(
     `https://api.themoviedb.org/3/discover/movie?with_genres=${genre}&api_key=e57903f1ff149082d95f23b15ab2b58e&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pageMovie}&with_watch_monetization_types=flatrate`,
     true,
-    pageMovie
+    genre
   );
 
   const [allSerials] = useMovies(
@@ -111,11 +111,6 @@ export const Layout = ({
     ? "text-white b-left"
     : "text-danger b-left";
 
-  console.log(pageMovie);
-  console.log(section);
-  console.log(genre);
-  console.log(filteredList);
-  console.log(allMoviesByCat);
   return (
     <>
       <section className="container-fluid ">

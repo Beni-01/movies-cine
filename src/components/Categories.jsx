@@ -18,6 +18,10 @@ export const Categories = ({ handleClickGenre }) => {
     handleClickGenre(e.currentTarget.id);
     //console.log(e.currentTarget.id);
   };
+
+  const goodGenres = category.filter(
+    ({ name }) => name.toLowerCase() !== "documentary"
+  );
   return (
     <>
       <div className="container-fluid bg-color-category py-2">
@@ -29,7 +33,7 @@ export const Categories = ({ handleClickGenre }) => {
           >
             ALL
           </button>
-          {category.map(({ name, id }) => (
+          {goodGenres.map(({ name, id }) => (
             <button
               className="col-3 col-md-2 outline-btn-danger p-2 bg-transparent"
               key={id}

@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-export const useMovies = (url, asResults, dependance = null) => {
+export const useMovies = (
+  url,
+  asResults,
+  firstDependance = null,
+  secondDependance = null
+) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -14,7 +19,8 @@ export const useMovies = (url, asResults, dependance = null) => {
         setMovies(data);
       }
     })();
-  }, [dependance]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstDependance, secondDependance]);
 
   return [movies];
 };
